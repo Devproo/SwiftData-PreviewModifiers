@@ -12,10 +12,12 @@ import SwiftData
 class Book {
     #Index<Book>([\.name], [\.genre])
     var name: String
+
     var genre: Genre
     var comment: String = ""
     @Relationship(inverse: \Author.books)
     var authors: [Author]
+    
     
     var allAuthors: String {
             return authors.map { $0.fullName}.joined(separator: ", ")
@@ -31,3 +33,4 @@ class Book {
         self.init(name: name, genre: genre, authors: [])
     }
 }
+
