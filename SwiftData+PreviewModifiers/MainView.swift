@@ -25,6 +25,6 @@ struct MainView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .mockData) {
     MainView()
 }

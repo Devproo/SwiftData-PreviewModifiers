@@ -5,10 +5,11 @@
 //  Created by ipeerless on 27/12/2024.
 //
 
+import SwiftUI
 import SwiftData
 
 @Model
-class  Author {
+class Author {
     #Unique<Author>([\.firstName, \.lastName])
     var firstName: String
     var lastName: String
@@ -27,5 +28,4 @@ class  Author {
     convenience init(firstName: String, lastName: String) {
         self.init(firstName: firstName, lastName: lastName, books: [])
     }
-    
 }

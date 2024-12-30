@@ -1,0 +1,115 @@
+{
+  "genres": [
+    { "name": "Fantasy", "color": "#B33234" },
+    { "name": "Science Fiction", "color": "#FFC300" },
+    { "name": "Horror", "color": "#244026" },
+    { "name": "Thriller", "color": "#462F97" },
+    { "name": "Classic", "color": "#05F967" },
+    { "name": "Romance", "color": "#FF69B4" },
+    { "name": "Mystery", "color": "#6A5ACD" },
+    { "name": "Adventure", "color": "#FF4500" },
+    { "name": "Historical Fiction", "color": "#8B4513" }
+  ],
+
+  "authors": [
+    { "firstName": "Neil", "lastName": "Gaiman", "authorId": "Neil Gaiman" },
+    { "firstName": "Terry", "lastName": "Pratchett", "authorId": "Terry Pratchett" },
+    { "firstName": "Stephen", "lastName": "King", "authorId": "Stephen King" },
+    { "firstName": "Peter", "lastName": "Straub", "authorId": "Peter Straub" },
+    { "firstName": "Robert", "lastName": "Shea", "authorId": "Robert Shea" },
+    { "firstName": "Robert", "lastName": "Anton Wilson", "authorId": "Robert Anton Wilson" },
+    { "firstName": "Isaac", "lastName": "Asimov", "authorId": "Isaac Asimov" },
+    { "firstName": "Jane", "lastName": "Austen", "authorId": "Jane Austen" },
+    { "firstName": "Agatha", "lastName": "Christie", "authorId": "Agatha Christie" },
+    { "firstName": "J.R.R.", "lastName": "Tolkien", "authorId": "J.R.R. Tolkien" },
+    { "firstName": "H.G.", "lastName": "Wells", "authorId": "H.G. Wells" },
+    { "firstName": "Dan", "lastName": "Brown", "authorId": "Dan Brown" },
+    { "firstName": "Suzanne", "lastName": "Collins", "authorId": "Suzanne Collins" },
+    { "firstName": "George", "lastName": "Orwell", "authorId": "George Orwell" },
+    { "firstName": "Harper", "lastName": "Lee", "authorId": "Harper Lee" }
+  ],
+
+  "books": [
+    {
+      "name": "Good Omens",
+      "genre": "Fantasy",
+      "authorIds": ["Neil Gaiman", "Terry Pratchett"]
+    },
+    {
+      "name": "The Hobbit",
+      "genre": "Fantasy",
+      "authorIds": ["J.R.R. Tolkien"]
+    },
+    {
+      "name": "Foundation",
+      "genre": "Science Fiction",
+      "authorIds": ["Isaac Asimov"]
+    },
+    {
+      "name": "The Time Machine",
+      "genre": "Science Fiction",
+      "authorIds": ["H.G. Wells"]
+    },
+    {
+      "name": "Pride and Prejudice",
+      "genre": "Romance",
+      "authorIds": ["Jane Austen"]
+    },
+    {
+      "name": "Murder on the Orient Express",
+      "genre": "Mystery",
+      "authorIds": ["Agatha Christie"]
+    },
+    {
+      "name": "Angels and Demons",
+      "genre": "Thriller",
+      "authorIds": ["Dan Brown"]
+    },
+    {
+      "name": "The Hunger Games",
+      "genre": "Adventure",
+      "authorIds": ["Suzanne Collins"]
+    },
+    {
+      "name": "1984",
+      "genre": "Classic",
+      "authorIds": ["George Orwell"]
+    },
+    {
+      "name": "To Kill a Mockingbird",
+      "genre": "Classic",
+      "authorIds": ["Harper Lee"]
+    },
+    {
+      "name": "The Shining",
+      "genre": "Horror",
+      "authorIds": ["Stephen King"]
+    },
+    {
+      "name": "Dracula",
+      "genre": "Horror",
+      "authorIds": ["Bram Stoker"]
+    },
+    {
+      "name": "The Da Vinci Code",
+      "genre": "Thriller",
+      "authorIds": ["Dan Brown"]
+    },
+    {
+      "name": "The War of the Worlds",
+      "genre": "Science Fiction",
+      "authorIds": ["H.G. Wells"]
+    },
+    {
+      "name": "Emma",
+      "genre": "Romance",
+      "authorIds": ["Jane Austen"]
+    },
+    {
+      "name": "Brave New World",
+      "genre": "Science Fiction",
+      "authorIds": ["Aldous Huxley"]
+    }
+  ]
+}
+

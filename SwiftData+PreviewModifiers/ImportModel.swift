@@ -8,7 +8,6 @@
 import Foundation
 
 struct ImportModel: Codable {
-    
     struct GenreI: Codable {
         let name: String
         let color: String
@@ -31,11 +30,9 @@ struct ImportModel: Codable {
     let books: [BookI]
     
     static func fetchMockData() -> ImportModel? {
-        guard let url = Bundle.main.url(forResource: "MockData.json", withExtension: "") else {return nil}
-        guard let data = try? Data(contentsOf: url) else {return nil}
-        let importData = try?JSONDecoder().decode(ImportModel.self, from: data)
-        
+        guard let url = Bundle.main.url(forResource: "MockData.json", withExtension: "") else { return nil }
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        let importData = try? JSONDecoder().decode(ImportModel.self, from: data)
         return importData
     }
-    
 }

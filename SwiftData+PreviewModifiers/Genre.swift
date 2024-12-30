@@ -4,6 +4,7 @@
 //
 //  Created by ipeerless on 27/12/2024.
 //
+
 import SwiftUI
 import SwiftData
 
@@ -13,22 +14,14 @@ class Genre {
     var name: String
     var color: String
     @Relationship(inverse: \Book.genre)
-    var  books: [Book]
+    var books: [Book]
     
+    // Computed property used to determine the foreground style for Genre tag
     var colorStyle: Color {
-        switch color.lowercased() {
-        case "red": return .red
-        case "blue": return .blue
-        case "green": return .green
-        case "yellow": return .yellow
-        case "black": return .black
-        case "white": return .white
-        default: return .gray
-        }
+        Color(hex: color)!
     }
-    
     var textColor: Color {
-        colorStyle == .white || colorStyle == .yellow ? .black : .white
+        colorStyle.adaptedTextColor()
     }
     
     init(name: String, color: String, books: [Book]) {
@@ -36,7 +29,9 @@ class Genre {
         self.color = color
         self.books = books
     }
+  
     convenience init(name: String, color: String) {
         self.init(name: name, color: color, books: [])
     }
+    
 }

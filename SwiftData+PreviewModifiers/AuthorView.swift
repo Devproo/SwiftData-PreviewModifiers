@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct AuthorView: View {
-    @Query(sort:\Author.lastName) var authors: [Author]
+    @Query(sort: \Author.lastName) var authors: [Author]
     var body: some View {
         NavigationStack {
             List(authors) { author in
@@ -23,6 +23,6 @@ struct AuthorView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .mockData) {
     AuthorView()
 }
