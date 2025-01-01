@@ -8,41 +8,51 @@
 import SwiftUI
 import SwiftData
 
+enum SortOrder: String, Identifiable, CaseIterable {
+    case book, genre
+    var id: Self { self }
+}
+
+enum FilterType: String, Identifiable, CaseIterable {
+    case book, genre, author
+    var id: Self { self }
+}
+
 struct BooksView: View {
-    @Query(sort: \Book.name) var books: [Book]
-       @State private var selectedBook: Book?
-       var body: some View {
-           NavigationStack {
-               List(books) { book in
-                   VStack(alignment: .leading) {
-                       HStack {
-                           Text(book.name)
-                               .font(.title)
-                           Spacer()
-                           Text(book.genre.name)
-                               .tagStyle(genre: book.genre)
-                       }
-                       HStack {
-                           Text(book.allAuthors)
-                           Spacer()
-                           Button {
-                               selectedBook = book
-                           } label: {
-                               Image(systemName: "message")
-                                   .symbolVariant(book.comment.isEmpty ? .none : .fill)
-                           }
-                           .buttonStyle(.plain)
-                       }
-                   }
-               }
-               .listStyle(.plain)
-               .sheet(item: $selectedBook) { book in
-                   BookCommentView(book: book)
-                       .presentationDetents([.height(300)])
-               }
-               .navigationTitle("Books")
-           }
-       }
+    @State private var sortOrder = SortOrder.book
+    @State private var filterType = FilterType.book
+    @State private var filter = ""
+    var body: some View {
+        NavigationStack {
+            VStack {
+                HStack {
+                    Picker("Sort Order", selection: $sortOrder) {
+                        ForEach(SortOrder.allCases) { SortOrder in
+                            Text("sorted by\(sortOrder)")
+                            
+                        }
+                    }
+                    
+                    Spacer()
+                    Picker("Filter Type", selection: $filterType) {
+                        ForEach(FilterType.allCases) { filterType in
+                            Text("filtered by\(filterType)")
+                        }
+                    }
+                }
+                .buttonStyle(.bordered)
+                .padding(.horizontal)
+                
+                BookListView(
+                    sortOrder: sortOrder,
+                    filterType: filterType,
+                    filter: filter
+                )
+            }
+            .searchable(text: $filter, prompt: "Enter search word")
+            .navigationTitle("Books")
+        }
+    }
 }
 
 #Preview(traits: .mockData) {

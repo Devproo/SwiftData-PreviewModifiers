@@ -10,7 +10,7 @@ import SwiftData
 
 struct MainView: View {
     
-   var body: some View {
+    var body: some View {
         TabView {
             Tab("Books", systemImage: "books.vertical"){
                 BooksView()
