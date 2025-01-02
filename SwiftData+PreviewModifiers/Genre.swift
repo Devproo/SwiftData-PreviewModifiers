@@ -13,7 +13,7 @@ class Genre {
     @Attribute(.unique)
     var name: String
     var color: String
-    @Relationship(inverse: \Book.genre)
+    @Relationship(deleteRule: .cascade ,inverse: \Book.genre)
     var books: [Book]
     
     // Computed property used to determine the foreground style for Genre tag

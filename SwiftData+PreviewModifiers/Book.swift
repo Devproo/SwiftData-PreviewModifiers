@@ -12,7 +12,6 @@ import SwiftData
 class Book {
     #Index<Book>([\.name], [\.genre])
     var name: String
-
     var genre: Genre
     var comment: String = ""
     @Relationship(inverse: \Author.books)
